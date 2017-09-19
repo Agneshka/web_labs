@@ -1,0 +1,425 @@
+﻿
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Five Things You Should Know About HTML5 - Dive Into HTML5</title>
+<!--[if lt IE 9]><script src="j/html5.js"></script><![endif]-->
+<style>
+h1:before{content:"Introduction:"}
+h2{text-align:left;text-transform:inherit}
+
+/* typography */
+
+@font-face {
+  font-family: "Essays 1743";
+  src: url("f/Essays1743.eot?") format("eot"), url("f/Essays1743.woff") format("woff"), url("f/Essays1743.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-weight: bold;
+  src: url("f/Essays1743-bold.eot?") format("eot"), url("f/Essays1743-bold.woff") format("woff"), url("f/Essays1743-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-style: italic;
+  src: url("f/Essays1743-italic.eot?") format("eot"), url("f/Essays1743-italic.woff") format("woff"), url("f/Essays1743-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-style: italic;
+  font-weight: bold;
+  src: url("f/Essays1743-bold-italic.eot?") format("eot"), url("f/Essays1743-bold-italic.woff") format("woff"), url("f/Essays1743-bold-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alphabet of Children";
+  src: url("f/Alphabet-of-Children.eot?") format("eot"), url("f/Alphabet-of-Children.woff") format("woff"), url("f/Alphabet-of-Children.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  src: url("f/Libertine.eot?") format("eot"), url("f/Libertine.woff") format("woff"), url("f/Libertine.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-weight: bold;
+  src: url("f/Libertine-bold.eot?") format("eot"), url("f/Libertine-bold.woff") format("woff"), url("f/Libertine-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-style: italic;
+  src: url("f/Libertine-italic.eot?") format("eot"), url("f/Libertine-italic.woff") format("woff"), url("f/Libertine-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-style: italic;
+  font-weight: bold;
+  src: url("f/Libertine-bold-italic.eot?") format("eot"), url("f/Libertine-bold-italic.woff") format("woff"), url("f/Libertine-bold-italic.ttf") format("truetype");
+}
+
+/* base */
+
+html {
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+}
+html, body {
+  background: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: large/1.556 "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  word-spacing: 0.1em;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+pre, kbd, samp, code, var {
+  font: medium/1.75 Consolas, "Andale Mono", Monaco, "Liberation Mono", "Bitstream Vera Sans Mono", "DejaVu Sans Mono", monospace;
+  word-spacing: 0;
+  letter-spacing: 0;
+}
+.a, .u, table.bc tbody td {
+  font: 100%/1 "Arial Unicode MS", FreeSerif, OpenSymbol, "DejaVu Sans", sans-serif;
+}
+.baa {
+  font: oblique 105% Constantia, Baskerville, Palatino, "Palatino Linotype", "URW Palladio L", serif;
+}
+.note {
+  margin: 3.112em 4.94em;
+}
+.note span {
+  display: block;
+  float: left;
+  font-size: 266.7%;
+  line-height: 0.8;
+  margin: 0 0.22em 0 -1.22em;
+}
+.ss span {
+  display: block;
+  text-align: center;
+  border-top: 3px double;
+  border-bottom: 3px double;
+}
+.c {
+  font-size: medium;
+  line-height: 1.75;
+  margin: 1.75em 0;
+}
+.f:first-letter {
+  font-family: "Alphabet of Children";
+  font-size: 8.2em;
+  float: left;
+  margin-right: 0.02em;
+  line-height: 0.75;
+}
+p, ul, ol {
+  font-size: large;
+  margin: 1.556em 0;
+}
+
+/* basics */
+
+.clear {
+  clear: both;
+}
+.c, .a, #toc, form div {
+  clear: both;
+  text-align: center;
+}
+
+#toc ol, #toc li {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.a {
+  font-size: xx-large;
+  line-height: .875;
+  text-shadow: 0 0 2px #667;
+}
+.pf, .fr {
+  border: 1px solid;
+}
+.pf {
+  margin: 1.75em 0;
+}
+.pf .inner {
+  min-height: 253px;
+  margin: 0 15px 0 0;
+  padding: 0 154px 1.75em 0;
+  background: white url(i/openclipart.org_johnny_automatic_little_professor.png) bottom right no-repeat;
+}
+.pf .moneybags {
+  min-height: 245px;
+  margin: 0 15px 0 0;
+  padding: 0 190px 1.75em 0;
+  background: white url(i/openclipart.org_johnny_automatic_bag_of_money.png) bottom right no-repeat;
+}
+.pf h4 {
+  margin: 0;
+  padding: 4px;
+  background: black;
+  color: white;
+}
+.ss {
+  float: right;
+  margin: 0 0 1.75em 1.75em;
+  font-size: medium;
+}
+address, cite, dfn, var {
+  font-style: normal;
+}
+sup {
+  font-variant: small-caps;
+  vertical-align: text-top;
+}
+
+/* links */
+
+a {
+  text-decoration: none;
+}
+a:link {
+  color: FireBrick;
+  border-bottom: 1px dotted;
+}
+a:visited {
+  color: RosyBrown;
+  border-bottom: 1px dotted;
+}
+a:link:hover, a:visited:hover {
+  border-bottom: 1px solid;
+}
+.c a {
+  color: inherit;
+}
+
+/* figures and legends */
+
+.legend {
+  font: italic x-large/1.75 "Essays 1743", "Marker Felt", "Kristen ITC", "Viner Hand ITC", "Lucida Handwriting", Amienne, Boopee, "Segoe Print", "Times New Roman", serif;
+  text-shadow: 0 0 1px #667;
+  margin-left: 0.5em;
+  vertical-align: top;
+}
+.arrow {
+  font-size: 200%;
+  line-height: 0.3;
+  vertical-align: sub;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.top {
+  margin-bottom: 0.3em;
+  display: block;
+}
+.bottom {
+  display: block;
+  margin-top: 0;
+  margin-left: 2em;
+}
+
+/* code blocks */
+
+pre {
+  padding-left: 3.5em;
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  word-wrap: break-word; /* IE */
+}
+pre.ib {
+  padding: 0;
+}
+mark {
+  display: inline-block;
+  background: #ff8;
+  border: 1px dotted #888;
+}
+.p {
+  color: #667;
+}
+
+/* overrides */
+
+li ol, .q, .v span {
+  margin: 0;
+}
+code, var, samp {
+  line-height: inherit !important;
+}
+
+/* headers */
+
+h1, h2, h3, h4, caption, thead th {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px #667;
+}
+h1 {
+  font-size: 266.7%;
+  line-height: 1.1;
+  text-align: center;
+  width: 100%;
+  margin: 1.49em 0;
+}
+h2 {
+  font-size: 210%;
+  line-height: 1.3125;
+  margin: 1.167em 0;
+  text-align: center;
+  clear: both;
+}
+h3 {
+  font-size: x-large;
+  line-height: 1.167;
+  margin: 1.556em 0;
+  text-align: center;
+}
+h1:before {
+  content: "\2116" counter(h1) ".";
+}
+
+/* video */
+
+video {
+  display: block;
+  margin: 0 auto;
+}
+
+/* browser compatibility and other tables */
+
+.bc, .st {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bc tbody th, .bc thead th.l, tfoot td {
+  text-align: left;
+}
+
+.bc thead th, .bc td {
+  text-align: center;
+}
+
+tfoot {
+  font-size: small;
+}
+
+.st {
+  border: 1px solid;
+}
+
+.st th {
+  text-align: left;
+  font-weight: normal;
+}
+
+.st tr > th:first-child {
+  padding-left: 5px;
+}
+
+.ho th {
+  border-bottom: 1px solid;
+}
+
+.zebra {
+  background: #eee;
+}
+
+/* asterism styles */
+
+.rotatedFloralHeartBullet:after { content: "\2767" }
+
+.triangularBullet:after { content: "\2023" }
+
+.leftwardsWaveArrow:after  { content: "\219C" }
+.rightwardsWaveArrow:after { content: "\219D" }
+
+.leftwardsSquiggleArrow:after  { content: " \21DC" }
+.rightwardsSquiggleArrow:after { content: "\21DD" }
+
+.whiteRightPointingIndex:after { content: "\261E" }
+
+.anticlockwiseTopSemicircleArrow:after { content: "\21B6" }
+.clockwiseTopSemicircleArrow:after { content: "\21B7" }
+</style>
+<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="mobile.css">
+<link rel="prefetch" href="past.html">
+<p>You are here: <a href="index.html">Home</a> <span class="u triangularBullet"></span> <a href="table-of-contents.html#introduction">Dive Into <abbr>HTML5</abbr></a> <span class="u triangularBullet"></span>
+<h1><br>Five Things You Should Know About HTML5</h1>
+<p id="toc">&nbsp;
+<p class="a rotatedFloralHeartBullet">
+<h2 id="one">1. It&rsquo;s not one big thing</h2>
+
+<p style="float:right;margin:0 0 1.75em 1.75em"><img src="i/video.png" alt="[mock video player]" width="226" height="166">
+
+<p>You may well ask: &ldquo;How can I start using <abbr>HTML5</abbr> if older browsers don&rsquo;t support it?&rdquo; But the question itself is misleading. <abbr>HTML5</abbr> is not one big thing; it is a collection of individual features. So you can&rsquo;t detect &ldquo;<abbr>HTML5</abbr> support,&rdquo; because that doesn&rsquo;t make any sense. But you <em>can</em> detect support for individual features, like canvas, video, or geolocation.
+
+<p>You may think of <abbr>HTML</abbr> as tags and angle brackets. That&rsquo;s an important part of it, but it&rsquo;s not the whole story. The <abbr>HTML5</abbr> specification also defines how those angle brackets interact with JavaScript, through the Document Object Model (<abbr>DOM</abbr>). <abbr>HTML5</abbr> doesn&rsquo;t just define a <code>&lt;video&gt;</code> tag; there is also a corresponding <abbr>DOM</abbr> <abbr>API</abbr> for video objects in the <abbr>DOM</abbr>. You can use this <abbr>API</abbr> to detect support for different video formats, play a video, pause, mute audio, track how much of the video has been downloaded, and everything else you need to build a rich user experience around the <code>&lt;video&gt;</code> tag itself.
+
+<p><a href="detect.html">Chapter 2</a> and <a href="everything.html">Appendix A</a> will teach you how to properly detect support for each new <abbr>HTML5</abbr> feature.
+
+<h2 id="two">2. You don&rsquo;t need to throw anything away</h2>
+
+<p style="float:left;margin:0 1.75em 1.75em 0"><img src="i/forms.png" alt="[sample form controls]" width="134" height="196">
+
+<p>Love it or hate it, you can&rsquo;t deny that <abbr>HTML</abbr> 4 is the most successful markup format ever. <abbr>HTML5</abbr> builds on that success. You don&rsquo;t need to throw away your existing markup. You don&rsquo;t need to relearn things you already know. If your web application worked yesterday in <abbr>HTML</abbr> 4, it will still work today in <abbr>HTML5</abbr>. Period.
+
+<p>Now, if you want to <em>improve</em> your web applications, you&rsquo;ve come to the right place. Here&rsquo;s a concrete example: <abbr>HTML5</abbr> supports all the form controls from <abbr>HTML</abbr> 4, but it also includes new input controls. Some of these are long-overdue additions like sliders and date pickers; others are more subtle. For example, the <code>email</code> input type looks just like a text box, but mobile browsers will customize their onscreen keyboard to make it easier to type email addresses. Older browsers that don&rsquo;t support the <code>email</code> input type will treat it as a regular text field, and the form still works with no markup changes or scripting hacks. This means you can start improving your web forms <em>today</em>, even if some of your visitors are stuck on IE 6.
+
+<p>Read all the gory details about <abbr>HTML5</abbr> forms in <a href="forms.html">Chapter 9</a>.
+
+<h2 id="three">3. It&rsquo;s easy to get started</h2>
+
+<p style="float:right;margin:0 0 1.75em 1.75em"><img src="i/markup-with-arrow.png" alt="[sample HTML markup]" width="234" height="202">
+
+<p>&ldquo;Upgrading&rdquo; to <abbr>HTML5</abbr> can be as simple as changing your <i>doctype</i>. The doctype should already be on the first line of every <abbr>HTML</abbr> page. Previous versions of <abbr>HTML</abbr> defined a lot of doctypes, and choosing the right one could be tricky. In <abbr>HTML5</abbr>, there is only one doctype:
+
+<blockquote>
+<p><code>&lt;!DOCTYPE html&gt;</code>
+</blockquote>
+
+<p>Upgrading to the <abbr>HTML5</abbr> doctype won&rsquo;t break your existing markup, because <a rel="external" href="http://www.w3.org/TR/html5-diff/#absent-elements" target="_blank">obsolete elements</a> previously defined in HTML 4 will still render in <abbr>HTML5</abbr>. But it will allow you to use &mdash; and validate &mdash; new semantic elements like <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code>. You&rsquo;ll learn all about these new elements in <a href="semantics.html">Chapter 3</a>.
+
+<h2 id="four">4. It already works</h2>
+
+<p style="float:left;margin:0 1.75em 1.75em 0"><img src="i/rel-email.png" alt="[form field with onscreen keyboard]" width="227" height="192">
+
+<p>Whether you want to draw on a canvas, play video, design better forms, or build web applications that work offline, you&rsquo;ll find that <abbr>HTML5</abbr> is already well-supported. Firefox, Safari, Chrome, Opera, and mobile browsers already support canvas (<a href="canvas.html">Chapter 4</a>), video (<a href="video.html">Chapter 5</a>), geolocation (<a href="geolocation.html">Chapter 6</a>), local storage (<a href="storage.html">Chapter 7</a>), and more. Google already supports microdata annotations (<a href="extensibility.html">Chapter 10</a>). Even Microsoft &mdash; rarely known for blazing the trail of standards support &mdash; supports most <abbr>HTML5</abbr> features in Internet Explorer 9.
+
+<p style="float:right;margin:0 0 1.75em 1.75em"><img src="i/gears.png" alt="[Gears saying &quot;I can help&quot;]" width="125" height="75">
+
+<p>Each chapter of this book includes the all-too-familiar browser compatibility charts. But more importantly, each chapter includes a frank discussion of your options if you need to support older browsers. <abbr>HTML5</abbr> features like geolocation (<a href="geolocation.html">Chapter 6</a>) and video (<a href="video.html">Chapter 5</a>) were first provided by browser plugins like Gears or Flash. Other features, like canvas (<a href="canvas.html">Chapter 4</a>), can be emulated entirely in JavaScript. This book will teach you how to target the native features of modern browsers, without leaving older browsers behind.
+
+
+<h2 id="five">5. It&rsquo;s here to stay</h2>
+
+<p>Tim Berners-Lee invented the world wide web in the early 1990s. He later founded the <abbr>W3C</abbr> to act as a steward of web standards, which the organization has done for more than 15 years. Here is what the <abbr>W3C</abbr> had to say about the future of web standards, in July 2009:
+
+<blockquote cite="http://www.w3.org/News/2009#item119">
+<p>Today the Director announces that when the <abbr>XHTML</abbr> 2 Working Group charter expires as scheduled at the end of 2009, the charter will not be renewed. By doing so, and by increasing resources in the <abbr>HTML</abbr> Working Group, <abbr>W3C</abbr> hopes to accelerate the progress of <abbr>HTML5</abbr> and clarify <abbr>W3C</abbr>&rsquo;s position regarding the future of <abbr>HTML</abbr>.
+</blockquote>
+
+<p><abbr>HTML5</abbr> is here to stay. <a href="past.html">Let&rsquo;s dive in</a>.
+
+<p class="a rotatedFloralHeartBullet">
+
+<div class="pf">
+<h4>Did You Know?</h4>
+<div class="moneybags">
+<blockquote><p>In association with Google Press, O&rsquo;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &ldquo;HTML5: Up &amp; Running,&rdquo; and it is available now.
+<p>If you liked this introduction and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href="http://oreilly.com/catalog/9780596806033">buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
+</blockquote>
+</div>
+</div>
+
+<p class="c">Copyright MMIX&ndash;MMXI <a href="about.html">Mark Pilgrim</a>
+
+<form action="http://www.google.com/cse"><div><input type="hidden" name="cx" value="017884302975346027366:bgclqh8nvse"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="25" placeholder="powered by Google&trade;">&nbsp;<input type="submit" name="sa" value="Search"></div></form>
+<script src="j/jquery.js"></script>
+<script src="j/dih5.js"></script>
